@@ -17,6 +17,7 @@ namespace LibruaryApi
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddScoped<ILibruary_FloorRepository, Libruary_FloorRepository>();
+            builder.Services.AddScoped<IDepartmentsRepository,DepartmentsRepository>();
 
             var app = builder.Build();
 
