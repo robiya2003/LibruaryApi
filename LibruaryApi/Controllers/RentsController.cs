@@ -3,10 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LibruaryApi.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/[controller]")]
     [ApiController]
-    public class AuthersController : ControllerBase
+    public class RentsController : ControllerBase
     {
-    
     }
 }
