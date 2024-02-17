@@ -18,6 +18,8 @@ namespace LibruaryApi
             builder.Services.AddSwaggerGen();
             builder.Services.AddScoped<ILibruary_FloorRepository, Libruary_FloorRepository>();
             builder.Services.AddScoped<IDepartmentsRepository,DepartmentsRepository>();
+            builder.Services.AddScoped<IShelfsRepository,ShelfsRepository>();
+            builder.Services.AddScoped<IShelf_floorsRepository,Shelf_floorsRepository>();
 
             var app = builder.Build();
 

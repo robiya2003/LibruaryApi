@@ -2,5 +2,6 @@
 {
     public class ShelfModelTDO
     {
+        public int department_id { get; set; }
     }
 }
