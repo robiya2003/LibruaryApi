@@ -20,7 +20,7 @@ namespace LibruaryApi
             builder.Services.AddScoped<IDepartmentsRepository,DepartmentsRepository>();
             builder.Services.AddScoped<IShelfsRepository,ShelfsRepository>();
             builder.Services.AddScoped<IShelf_floorsRepository,Shelf_floorsRepository>();
-
+            builder.Services.AddScoped<IShelf_floor_seriousRepository,Shelf_floor_seriousRepository>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
