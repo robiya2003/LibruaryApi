@@ -1,4 +1,7 @@
 
+using LibruaryApi.Repositories.ClassRepository;
+using LibruaryApi.Repositories.InterfaceRepository;
+
 namespace LibruaryApi
 {
     public class Program
@@ -13,6 +16,7 @@ namespace LibruaryApi
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddScoped<ILibruary_FloorRepository, Libruary_FloorRepository>();
 
             var app = builder.Build();
 
