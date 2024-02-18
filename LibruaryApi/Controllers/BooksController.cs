@@ -1,4 +1,5 @@
-﻿using LibruaryApi.ModelsAll.ModelsTDO;
+﻿using LibruaryApi.ModelsAll;
+using LibruaryApi.ModelsAll.ModelsTDO;
 using LibruaryApi.Repositories.InterfaceRepository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -19,5 +20,16 @@ namespace LibruaryApi.Controllers
         {
             return _booksRepository.Post(AutherId,bookModelTDO);
         }
+        [HttpGet]
+        public List<Books_authersModel> GetBooks()
+        {
+            return _booksRepository.GetBooks();
+        }
+        [HttpDelete]
+        public string Delete(int bookId)
+        {
+            return _booksRepository.Delete(bookId);
+        }
+
     }
 }

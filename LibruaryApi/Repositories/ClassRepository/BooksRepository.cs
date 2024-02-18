@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using LibruaryApi.ModelsAll;
 using LibruaryApi.ModelsAll.Models;
 using LibruaryApi.ModelsAll.ModelsTDO;
 using LibruaryApi.Repositories.InterfaceRepository;
@@ -9,6 +10,26 @@ namespace LibruaryApi.Repositories.ClassRepository
     public class BooksRepository : IBooksRepository
     {
         public const string CONNECTINGSTRING = "Server=127.0.0.1;Port=5432;Database=LibruaryForApi;User Id=postgres;Password=dfrt43i0";
+
+        public string Delete(int id)
+        {
+            string query = $"delete from \"books\" where book_id=@id";
+            using (NpgsqlConnection npgsqlConnection = new NpgsqlConnection(CONNECTINGSTRING))
+            {
+                npgsqlConnection.Execute(query, new { id });
+            }
+
+            return $"malumot ochirildi";
+        }
+
+        public List<Books_authersModel> GetBooks()
+        {
+            using (NpgsqlConnection npgsqlConnection = new NpgsqlConnection(CONNECTINGSTRING))
+            {
+                return npgsqlConnection.Query<Books_authersModel>("\r\nselect * from books_authers\r\ninner join authers using(auther_id)\r\ninner join books using(book_id)").ToList();
+            }
+        }
+
         public string Post(int authet_id, BookModelTDO book)
         {
             #region
