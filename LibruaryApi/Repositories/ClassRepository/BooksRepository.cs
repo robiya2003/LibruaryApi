@@ -24,10 +24,16 @@ namespace LibruaryApi.Repositories.ClassRepository
             }
         
         }
-
-        public string Post(BookModelTDO book)
+        public string Post(int authet_id, BookModelTDO book)
         {
-            throw new NotImplementedException();
+            string query = $"insert into \"books\"(book_name,about,price,department_id,shelf_id,shelf_floor_id,shelf_floor_serious_id) values" +
+                $"(@book_name,@about,@price,@department_id,@shelf_id,@shelf_floor_id,@shelf_floor_serious_id)";
+            using (NpgsqlConnection npgsqlConnection = new NpgsqlConnection(CONNECTINGSTRING))
+            {
+                npgsqlConnection.Execute(query,book);
+            }
+
+            return "malumot qoshildi";
         }
     }
 }
