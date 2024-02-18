@@ -8,6 +8,6 @@
         public int department_id { get; set; }
         public int shelf_id { get; set; }
         public int shelf_floor_id { get; set; }
-        public int shelf_floor_serios_id { get; set; }
+        public int shelf_floor_serious_id { get; set; }
     }
 }
