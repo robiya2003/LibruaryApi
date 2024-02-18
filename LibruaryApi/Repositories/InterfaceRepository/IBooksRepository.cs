@@ -9,5 +9,7 @@ namespace LibruaryApi.Repositories.InterfaceRepository
         public string Post(int authet_id,BookModelTDO book);
         public List<Books_authersModel> GetBooks();
         public string Delete(int id);
+        public string Put(int book_id, int auther_id, BookModelTDO book);
+
     }
 }
